@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ulee <ulee@student.42.fr>                  +#+  +:+       +#+         #
+#    By: a_ulee <a_ulee@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/26 15:31:20 by ulee              #+#    #+#              #
-#    Updated: 2021/08/26 15:31:21 by ulee             ###   ########.fr        #
+#    Updated: 2021/12/24 14:18:14 by a_ulee           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ else
 endif
 
 %.o: %.c
-	$(CC) $(INCS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
 all :
 	$(RM) pipex_bonus.o
@@ -46,7 +46,7 @@ all :
 
 $(NAME) : $(OBJ_FILES)
 	make -C ./libft
-	$(CC) $(LIBFT) $(OBJ_FILES) -o $@
+	$(CC) $(CFLAGS) $(LIBFT) $(OBJ_FILES) -o $@
 
 clean:
 	make -C ./libft clean
